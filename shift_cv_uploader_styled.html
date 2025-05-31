@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Shift CV Uploader</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-width: 500px;
+      width: 100%;
+    }
+    h2 {
+      text-align: center;
+      color: #4e54c8;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 20px;
+    }
+    input[type="email"],
+    select,
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 12px;
+      background-color: #4e54c8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #3b40a4;
+    }
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🚀 Shift - Convertir CV al Estilo Harvard</h2>
+    <form action="https://n8n-2-e5gw.onrender.com/webhook/cv-to-latexharvard" method="post" enctype="multipart/form-data">
+      <label for="language">🌍 Idioma del CV</label>
+      <select name="language" id="language" required>
+        <option value="Español">Español</option>
+        <option value="Inglés">Inglés</option>
+        <option value="Portugués" selected>Portugués</option>
+      </select>
+
+      <label for="email_to">📧 Tu correo</label>
+      <input type="email" name="email_to" id="email_to" value="conismp@gmail.com" required>
+
+      <label for="cv_file">📎 Carga tu CV (.pdf)</label>
+      <input type="file" name="cv_file" id="cv_file" accept=".pdf" required>
+
+      <button type="submit">Enviar y Convertir 💼</button>
+    </form>
+    <div class="footer">Hecho con 💙 por Shift</div>
+  </div>
+</body>
+</html>
